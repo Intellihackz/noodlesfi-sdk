@@ -8,7 +8,7 @@ This SDK was created and is maintained by **Zephyr** ([@zephyrdev_](https://x.co
 
 ### 🐛 Report Bugs
 
-Found a bug? Please [open an issue](https://github.com/IntelliHackz/noodles-sdk/issues) with:
+Found a bug? Please [open an issue](https://github.com/IntelliHackz/noodlesfi-sdk/issues) with:
 
 - Clear description of the problem
 - Steps to reproduce
@@ -17,7 +17,7 @@ Found a bug? Please [open an issue](https://github.com/IntelliHackz/noodles-sdk/
 
 ### 💡 Suggest Features
 
-Have an idea? I'd love to hear it! [Open an issue](https://github.com/IntelliHackz/noodles-sdk/issues) with the `enhancement` label.
+Have an idea? I'd love to hear it! [Open an issue](https://github.com/IntelliHackz/noodlesfi-sdk/issues) with the `enhancement` label.
 
 ### 🔧 Submit Pull Requests
 
@@ -33,8 +33,8 @@ Have an idea? I'd love to hear it! [Open an issue](https://github.com/IntelliHac
 
 ```bash
 # Clone your fork
-git clone https://github.com/IntelliHackz/noodles-sdk.git
-cd noodles-sdk
+git clone https://github.com/IntelliHackz/noodlesfi-sdk.git
+cd noodlesfi-sdk
 
 # Install dependencies
 npm install

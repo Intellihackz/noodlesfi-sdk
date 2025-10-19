@@ -10,7 +10,7 @@ import { PortfolioResource } from './resources/portfolio';
  * 
  * @example
  * ```typescript
- * import { Noodles } from 'noodles-sdk';
+ * import { Noodles } from 'noodlesfi-sdk';
  * 
  * const client = new Noodles({
  *   apiKey: 'your-api-key',

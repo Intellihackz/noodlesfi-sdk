@@ -227,7 +227,7 @@ import {
   UnauthorizedError, 
   RateLimitError, 
   InternalServerError 
-} from 'noodles-sdk';
+} from 'noodlesfi-sdk';
 
 try {
   const data = await client.ohlcv.getPair(params);
@@ -318,7 +318,7 @@ import {
   CoinDetailData,
   TrendingCoin,
   // ... and many more
-} from 'noodles-sdk';
+} from 'noodlesfi-sdk';
 ```
 
 All API responses are fully typed, giving you autocomplete and type checking in your IDE.
@@ -383,6 +383,6 @@ See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
 
 ---
 
-**If this SDK helped you, give it a ⭐️ on [GitHub](https://github.com/IntelliHackz/noodles-sdk)!**
+**If this SDK helped you, give it a ⭐️ on [GitHub](https://github.com/IntelliHackz/noodlesfi-sdk)!**
 
 Made with 🍜 and ❤️ for the Web3 community
