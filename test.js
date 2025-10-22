@@ -1,7 +1,7 @@
 const { Noodles } = require('./dist/index');
 
 const client = new Noodles({
-  apiKey: 'YOUR_REAL_API_KEY',
+  apiKey: 'kSYCZA9naL3Nbq2fZRXenWL4bXbQ2cOl',
 });
 
 client.ohlcv.getPair({

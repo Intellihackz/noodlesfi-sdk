@@ -142,7 +142,7 @@ const response = await client.coin.getTrending({
   }
 });
 
-response.data?.data.forEach(coin => {
+response.data?.forEach(coin => {
   console.log(`${coin.name} (${coin.symbol})`);
   console.log(`  Rank: ${coin.rank}`);
   console.log(`  Price: $${coin.price}`);
@@ -182,18 +182,19 @@ console.log(`24h Change: ${response.data?.price_change_24h}%`);
 #### Get multiple coin prices
 
 ```typescript
-// Using GET (comma-separated)
-const response = await client.coin.getPriceMultiGet({
-  coin_ids: '0x2::sui::SUI,0x5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN'
-});
-
-// Using POST (array)
-const response = await client.coin.getPriceMultiPost({
+// Using POST (array) - preferred for many IDs
+const responsePost = await client.coin.getPriceMulti({
   coin_ids: [
     '0x2::sui::SUI',
     '0x5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN'
   ]
-});
+}, 'sui', 'POST');
+
+// Using GET (comma-separated) - small number of IDs
+const responseGet = await client.coin.getPriceMulti({ coin_ids: '0x2::sui::SUI,0x5d4b302506645c37ff133b98c4b50a5ae14841659738d6d733d59d0d217a93bf::coin::COIN' }, 'sui', 'GET');
+
+// Choose the response you need (responsePost or responseGet)
+const response = responsePost; // or responseGet
 
 // Access prices by coin ID
 for (const [coinId, priceData] of Object.entries(response.data || {})) {
@@ -291,8 +292,7 @@ Coin information and pricing endpoints.
 - `getTop(params: CoinTopParams)` - Get top coins by market cap
 - `getNew(params: CoinNewParams)` - Get newly listed coins
 - `getPrice(params: CoinPriceParams)` - Get single coin price
-- `getPriceMultiGet(params: CoinPriceMultiParamsGet)` - Get multiple prices (GET)
-- `getPriceMultiPost(params: CoinPriceMultiParamsPost)` - Get multiple prices (POST)
+- `getPriceMulti(params: CoinPriceMultiParamsGet | CoinPriceMultiParamsPost, chain?: string, method?: 'GET' | 'POST')` - Get multiple prices (GET or POST)
 - `getPriceVolume(params: CoinPriceVolumeParams)` - Get price and volume data
 
 #### `client.pool`
